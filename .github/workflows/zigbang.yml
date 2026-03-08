@@ -1,9 +1,12 @@
-name: 0308_hellio
+name: zigbang_collect
 
 on:
   schedule:
     - cron: '0 14 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   run-script:
@@ -22,6 +25,7 @@ jobs:
 
       - name: 스크립트 실행
         run: python 0308_hellio.py
+
       - name: 결과 저장
         run: |
           git config --global user.name "github-actions"
