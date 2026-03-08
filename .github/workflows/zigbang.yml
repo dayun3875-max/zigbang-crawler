@@ -21,8 +21,7 @@ jobs:
         run: pip install requests
 
       - name: 스크립트 실행
-        run: python zigbang_collect.py
-
+        run: python 0308_hellio.py
       - name: 결과 저장
         run: |
           git config --global user.name "github-actions"
