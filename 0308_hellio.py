@@ -79,11 +79,18 @@ while True:
     time.sleep(0.5)
 
 
+import os
+
 file_name = f"helio_zigbang_{datetime.now().strftime('%Y%m%d')}.csv"
 
-with open(file_name, "w", newline="", encoding="utf-8-sig") as f:
+file_exists = os.path.isfile(file_name)
+
+with open(file_name, "a", newline="", encoding="utf-8-sig") as f:
     writer = csv.DictWriter(f, fieldnames=all_rows[0].keys())
-    writer.writeheader()
+
+    if not file_exists:
+        writer.writeheader()
+
     writer.writerows(all_rows)
 
 print("저장 완료:", file_name)
