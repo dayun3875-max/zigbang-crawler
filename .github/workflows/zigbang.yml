@@ -2,7 +2,7 @@ name: zigbang_collect
 
 on:
   schedule:
-  - cron: '0 2 * * *'
+  - cron: '*/3 * * * *'   # 3분마다 실행
   workflow_dispatch:
 
 permissions:
