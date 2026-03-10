@@ -2,7 +2,7 @@ name: zigbang_collect
 
 on:
   schedule:
-    - cron: '0 2 * * *'   # 한국시간 오전 11시
+    - cron: '17 2 * * *'   
   workflow_dispatch:
 
 permissions:
